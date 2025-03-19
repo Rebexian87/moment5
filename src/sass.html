@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sass</title>
+    <script type="module" src="js/app.js"></script>
+    <link rel="stylesheet" href="scss/main.scss">
+
+</head>
+
+
+<body>
+
+    <div class="grid-container">
+         <!--meny-->
+    <header class="position1">
+      
+        <button class="menu-btn open" id="open-menu">
+            <span class="menu-icon">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+            </span>
+            <span class="menu-text">Meny</span>
+        </button>  
+        <nav id ="nav-menu">
+             <button class="menu-btn close" id="close-menu">
+                <span class="menu-icon">
+                    <span class="bars cross1"></span>
+                    <span class="bars cross2"></span>
+                </span>
+                <span class="menu-text">Stäng meny</span>
+            </button> 
+            <ul>
+                <li><a href="index.html">Startsida</a></li>
+                <li><a href="sass.html">Sass</a></li>
+                <li><a href="animering.html">animering</a></li>
+                <li><a href="#">Länk</a></li>
+                <li><a href="#">Länk</a></li>
+             
+            </ul>
+        </nav>  
+        </header>
+            <h1 class="position2">Sass</h1>
+
+        <section id="section1" class="position3Sass">
+            <h2>Hur var det att arbeta med Sass?</h2>
+            <p>I längden så tror jag att det kommer vara betydligt effektivare att arbeta med Sass. 
+                Det är dock svårt att komma igång med nya vanor. 
+                En sak jag kommer att ta med mig till senare är att lägga in mina @mixins i base-filen i framtiden, nu ligger de i layoutfilen.
+                Jag tror att det kommer vara lättare att göra en css-fil när man väl kommer in i Scss. 
+            </p>
+        </section>
+         <!--innehåll på sidan, paragraf 1-->
+
+        <section id="section2" class="position4Sass">
+            <h2>För- och nackdelar</h2>
+            <p>
+                Den största fördelen enligt mig är att man kan dela upp Css-filen i flera olika istället för att ha en stor. Man kan göra en för header och footer, en för statsidan med flera. 
+                Det är också en fördel att man kan lägga in ens färgschema, storlekar med mera i en varibel så man endbart behöver ändra detta på ett ställe. Man kan också lägga in mixins oxh inherintance
+                för att lättare kunna repetera kod och uppdatera detta. 
+                Nackdelen är att det kommer ta tid att komma in i ett nytt sätt att jobba. 
+            </p>
+        </section>
+
+          <!--innehåll på sidan, paragraf 2-->
+   
+    <footer class="position10">
+        <p> DT211G, Datateknik GR, Frontend-baserad webbutveckling, Rebecca Smith (resm2400), 2025-03-12</p>
+ 
+         <!--sidfot-->
+ 
+     </footer>
+
+    </div>
+</body>
+</html>

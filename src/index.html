@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startsida</title>
+  
+    <script type="module" src="js/app.js"></script>
+    <link rel="stylesheet" href="scss/main.scss">
+    
+</head>
+<body>
+    <div class="grid-container">
+
+    <header class="position1">
+      <!--meny-->
+        <button class="menu-btn open" id="open-menu">
+            <span class="menu-icon">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+            </span>
+            <span class="menu-text">Meny</span>
+        </button>  
+        <nav id ="nav-menu">
+             <button class="menu-btn close" id="close-menu">
+                <span class="menu-icon">
+                    <span class="bars cross1"></span>
+                    <span class="bars cross2"></span>
+                </span>
+                <span class="menu-text">Stäng meny</span>
+            </button> 
+            <ul>
+                <li><a href="index.html">Startsida</a></li>
+                <li><a href="sass.html">Sass</a></li>
+                <li><a href="animering.html">Animering</a></li>
+                <li><a href="#">Länk</a></li>
+                <li><a href="#">Länk</a></li>
+             
+            </ul>
+        </nav>  
+        </header>
+
+
+
+
+       
+    <h1 class="position2">Moment 3</h1>
+
+
+    <section class="position3index"> 
+
+        <h2>Bild på fat</h2>
+        <picture>
+            <source srcset="images/fat.jpg?as=avif&width=300" type="image/avif" />
+            <source srcset="images/fat.jpg?as=webp&width=300" type="image/webp" />
+            <img class="picture1" src="images/fat.jpg?width=300" alt="fat med ansikte"/>
+    
+        </picture>
+
+    </section>
+
+      <!--innehåll med bild-->
+
+    <section class="position4index"> 
+        <h2>Bild på tomtebarn</h2>
+        <picture>
+            <source srcset="images/tomtebarn.jpg?as=avif&width=300" type="image/avif" />
+            <source srcset="images/tomtebarn.jpg?as=webp&width=300" type="image/webp" />
+            <img class="picture2" src="images/tomtebarn.jpg?width=300" alt="Tomtebarn"/>
+    
+        </picture>
+
+    </section>
+
+     <!--innehåll med bild-->
+    
+    <footer class="position10">
+       <p> DT211G, Datateknik GR, Frontend-baserad webbutveckling, Rebecca Smith (resm2400), 2025-03-12</p>
+
+        <!--sidfot-->
+
+    </footer>
+
+    </div>
+
+
+</body>
+</html>

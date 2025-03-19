@@ -1,0 +1,335 @@
+
+@use "base";
+
+
+@mixin tablet { /*Mixin för mediaqueries, minwidth*/
+    @media(min-width: base.$tablet) {
+        @content;
+    }
+} 
+
+@mixin tabletmax { /*Mixin för mediaqueries, maxwidth*/
+    @media(max-width: base.$tablet) {
+        @content;
+    }
+} 
+
+@mixin cross ($rotate, $size) { /*Mixin för krysset som syns när man öppnar hamburgarmeny*/
+    width: 25px;
+    transform:$rotate;
+    position: relative;
+    top: $size; }
+
+ %picture-msg { /*border runt picture*/
+    border: orange 5px solid;
+    border-radius: 50%;
+}
+
+%margin-msg { /*marginaler som används flera gånger i griden inlagd som inheritance*/
+    margin:auto;
+    margin-top: 5%;
+ }
+
+
+.picture1 { /*använder   %picture-msg*/
+    @extend %picture-msg; }
+
+
+.picture2 { /*använder   %picture-msg*/
+     @extend %picture-msg;
+     border-color: blue; }
+
+@mixin sektion ($color, $size, $radius) {  /*Mixin för ram runt paragrafer. If-sats  ifall man vill ha en border-radius eller inte. */
+    border-color: $color;
+    border-width: $size;
+    border-style: solid;
+    padding:2%;
+   
+
+    @if $radius {
+        border-radius: 10%;}
+ }
+
+ #section1 {
+    @include sektion (base.$secundary-color, 5px, true);  /*använder mixin för sektion, denna har en border-radius */
+    margin:3vh;
+
+ }
+
+ #section2 {
+    @include sektion (base.$secundary-color, 5px, false);  /*använder mixin för sektion, denna har inte en border-radius */
+    margin:3vh;
+ }
+
+
+ @mixin fonts ($size, $height) {  /*Mixin för fontsize och lineheight som används till h1, h2, p senare */
+ font-size: $size;
+ line-height: $height; }
+
+
+
+
+
+
+body {  background-color: base.$background-color;    /*bakgrundfärg från varibel*/
+            color: base.$text-color;                 /*textfärg från varibel*/
+            font-family: base.$font-stack;          /*font-family från varibel*/
+                 
+        }
+
+        h1 {@include fonts(2em, 120% );}    /*använder mixin för fonts*/
+        h2 {@include fonts(1.6em, 120% );
+        margin-bottom: 3%}
+        p {@include fonts(1.4em, 120% );}
+        
+ @media (prefers-color-scheme: dark) {    /*media-querie för mörkt tema*/
+       
+    body{ background-color: base.$background-color-dark;
+              color: base.$text-color-dark;}         
+        
+        }
+        
+
+    
+
+header {       /*meny, använder nesting*/
+    height: 80px;
+    background-color: base.$primary-color;   /*bakgrundsfärg från variabel*/
+    position: relative;
+    padding: 0 1em;
+    justify-content: space-between;
+    align-items: center;
+   
+
+nav {
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    display: none;
+    background-color: base.$darken-color; /*bakgrundsfärg från variabel*/
+
+
+
+
+    ul{
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        list-style:none;
+        text-align: center; 
+     }
+
+   
+
+
+li {    
+    padding: 0.8em 0;
+    width: 100%;
+    }
+
+   
+
+    a {
+        display: block;
+        padding: 6px 12px;
+        text-decoration: none;
+        color: base.$text-color-header; /*textfärg från variabel*/
+    }
+}}
+
+@include tablet {      /*mediaquerie för tablet*/
+
+    header {      /*meny, använder nesting*/
+        position: static;
+        display: flex;
+
+        nav {
+            display: block !important;
+            position: static;
+            box-shadow: 0 0px 0px;
+            height: auto;
+            font-size: 1.4em;
+            width: auto;
+
+            background-color: base.$primary-color; /*bakgrundsfärg från variabel*/
+        
+         ul {
+            height: 100%;
+         }
+
+         li {
+
+            display: inline;
+            padding: 1.2em 0;
+         }
+        
+         a {
+            display: inline;
+         }
+
+        }       
+
+    }
+    
+    #open-menu {
+        display: none !important;
+    }
+
+    }
+
+
+
+.menu-btn {
+    margin-top: 10px;
+    position: absolute;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    background-color: base.$darken-color; /*bakgrundsfärg från variabel*/
+    border:  solid 2px;
+    border-color: base.$text-color-header; /*färg på ram från variabel*/
+    cursor: pointer;
+
+   
+}
+@include tablet {    /*mediaquerie, använder sig av mixin för tablet*/
+    .menu-btn {
+        display: none;
+    }
+
+
+}
+
+ .menu-text {
+
+
+color: base.$text-color-header;
+right: 0px;
+}
+
+
+
+.menu-icon {
+    margin-right: 10px;
+}
+
+
+
+
+
+
+.bars {     /*hamburgarsymbol*/
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: base.$text-color-header;
+    margin: 5px 0;
+}
+
+
+
+
+
+.close {  /*Meny knapp, stäng*/
+ 
+    margin-top: 1em; 
+    margin-left: 3em;
+    padding: 10px 15px;
+
+
+}
+
+
+
+/* Roterar två lodräda streck, till ett kryss */
+
+
+
+.cross1 { /* Kryss, använder sig av mixin för detta */
+    @include cross(rotate(45deg), 5px);}
+
+.cross2 {
+    @include cross(rotate(135deg), -3px)}
+
+
+
+
+
+
+
+     .grid-container {    /*definiera grid*/
+         display: grid;
+         grid-template-columns: repeat(16, 1fr);
+         grid-template-rows: repeat(10, auto);
+         max-width: 1512px;} 
+    
+    .position1 {
+             grid-area: 1/1/2/-1;
+          }
+
+             
+        
+    
+
+    .position2 {
+            grid-area: 2/1/3/-1;
+            @extend %margin-msg;  /*använder inheritans för marginal*/
+         }
+
+    .position3index{
+        grid-area: 3/1/4/9; 
+        @extend %margin-msg;  /*använder inheritans för marginal*/
+        text-align: center;
+        
+    }
+    .position4index{
+        grid-area: 3/9/4/-1; 
+        @extend %margin-msg;  /*använder inheritans för marginal*/
+        text-align: center;
+    }
+
+    .position10 {
+        margin-top: 10%;
+        grid-area: 5/1/6/-1; 
+        margin-left: 2%;
+    }
+
+    .position3Sass {
+        grid-area: 3/1/4/9; 
+        @extend %margin-msg; /*använder inheritans för marginal*/
+       
+    }
+
+    .position4Sass {
+        grid-area: 3/9/4/-1; 
+        @extend %margin-msg; /*använder inheritans för marginal*/
+       
+    }
+
+    @include tabletmax { /*mixin/mediaquerias för tabletmax*/
+
+    .position3index{
+        grid-area: 3/1/4/-1; 
+          
+            
+    }
+    .position4index{
+        grid-area: 4/1/5/-1; 
+       
+    }
+
+    .position3Sass{
+        grid-area: 3/1/4/-1;       
+            
+    }
+    
+    .position4Sass{
+        grid-area: 4/1/5/-1; 
+       
+    }
+
+    }

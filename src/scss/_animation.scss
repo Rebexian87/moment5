@@ -1,0 +1,68 @@
+@use "base";
+@use "layout";
+
+#animeringh1 {  cursor: pointer;
+    font-size: 50px;
+    transition: 1s;}  /*Gör så att det blir en viss fördröjning nr man hovrar över text*/
+
+
+#animeringh1:hover {   /*detta händer när man hovrar över överskriften*/
+transform: skew(-10deg);    /*Text vrider sig*/
+text-shadow: 8px 8px 8px rgba(0.5,0.5,0.5, 0.5); /*Text får skugga*/
+ font-size: 80px; /*Text ändar storlek*/
+ font-weight: bold /*Text blir bold*/;
+ color: rgb(129, 86, 5); /*text ändrar färg*/
+}
+
+
+.picturekatt { /*Bilder på kattassar som ska röra sig med hjälp av animering*/
+    position: relative; 
+    animation-name: catPawMove;  /*namn på animering*/
+    animation-duration: 5s;   /*så här länga varar animeringen*/
+    animation-iteration-count: infinite; /*animeringen går hela tiden*/
+    animation-direction: alternate;/*animeringen går fram o tillbaka*/
+    
+}
+
+
+
+
+@keyframes catPawMove {
+    0% {left:0px; top: 0px} /*position från början*/
+    40% {left:200px; top:100px}  /*position efter 40%*/
+    60% {left:400px;  top:200px} /*position efter 60%*/
+    80% {left:600px; top:100px} /*position efter 80%*/
+    100% {left:800px; top: 0px} /*position efter 100%*/
+   
+}
+
+
+
+.picturekatt2 { /*bild på kattass där bakgrundfärg och stirlek ändras*/
+        animation-name: catPaw;   /*namn på animering*/
+    animation-duration: 7s;  /*så här länga varar animeringen*/
+    animation-iteration-count: infinite;/*animeringen går hela tiden*/
+    animation-direction: alternate; /*animeringen går fram o tillbaka*/
+}
+
+
+
+@keyframes catPaw {
+    10% {width: 250px; background-color: rgb(255, 192, 221); }/*bakgrundfärg och bredd på bild efter 10%*/
+    25% {width: 200px; background-color: rgb(192, 232, 255); }/*bakgrundfärg och bredd på bild efter 25%*/
+    40% {width: 150px; background-color: rgb(171, 221, 187); }/*bakgrundfärg och bredd på bild efter 40%*/
+    55% {width: 100px; background-color: rgb(223, 189, 189); }/*bakgrundfärg och bredd på bild efter 55%*/
+    70% {width: 150px; background-color: rgb(138, 134, 134); }/*bakgrundfärg och bredd på bild efter 70%*/
+    85% {width: 200px; background-color: rgb(187, 185, 157); }/*bakgrundfärg och bredd på bild efter 85%*/
+    100% {width: 200px; background-color:  rgb(192, 232, 255);}/*bakgrundfärg och bredd på bild efter 100%*/
+   
+}
+
+.position3anime{
+    grid-area: 3/1/4/-1; }
+
+    .position4anime{
+        grid-area: 4/1/5/-1; 
+    margin: auto;
+    margin-top: 300px;         
+    }
