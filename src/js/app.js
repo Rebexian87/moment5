@@ -83,19 +83,21 @@ async function getCourses () { //Funktion som hämtar data med hjälp av ajaxanr
 
     ctx.innerHTML = "";
 
+    const ctx2 = document.getElementById('myChart2');
 
+    ctx2.innerHTML = "";
     
 
- let coursesEl= document.querySelector("#test");
+
  
- coursesEl.innerHTML="";
+
 
 //sortera
 
 
 
 data.sort((a, b) => b.applicantsTotal - a.applicantsTotal)
-let courses= data.filter(education=>education.type === "Kurs"); //filtrera ut kurser
+let courses= data.filter(education=>education.type === "Kurs");
 let programs= data.filter(education=>education.type === "Program");
 
 
@@ -137,6 +139,34 @@ console.table(programs);
      
     }
   });
+
+
+  new Chart(ctx2, {
+    type: 'doughnut',
+    data: {
+    labels: programs.map(row=>row.name),   //xx ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],//   x labels: , [courses.forEach(course =>{course.name})],
+    datasets: [{
+    label: '# Antal',
+    data: programs.map(row =>row.applicantsTotal), //y
+    borderWidth: 1
+    }]
+    },
+    options: {
+        scales: {
+          y: {
+            beginAtZero: true
+            
+  
+          }, 
+  
+          x: {
+            max:5
+          }
+        }
+  
+       
+      }
+    });
 
 
    }
