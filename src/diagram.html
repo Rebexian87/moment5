@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startsida</title>
-  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="js/app.js"></script>
     <link rel="stylesheet" href="scss/main.scss">
+  
     
 </head>
 <body>
@@ -47,34 +48,14 @@
        
     <h1 class="position2">Moment 3</h1>
 
+    <div id="chart-container">
+        <canvas id="myChart"></canvas>
 
-    <section class="position3index"> 
+    </div>
 
-        <h2>Bild på fat</h2>
-        <picture>
-            <source srcset="images/fat.jpg?as=avif&width=300" type="image/avif" />
-            <source srcset="images/fat.jpg?as=webp&width=300" type="image/webp" />
-            <img class="picture1" src="images/fat.jpg?width=300" alt="fat med ansikte"/>
-    
-        </picture>
+    <h2>test</h2>
 
-    </section>
-
-      <!--innehåll med bild-->
-
-    <section class="position4index"> 
-        <h2>Bild på tomtebarn</h2>
-        <picture>
-            <source srcset="images/tomtebarn.jpg?as=avif&width=300" type="image/avif" />
-            <source srcset="images/tomtebarn.jpg?as=webp&width=300" type="image/webp" />
-            <img class="picture2" src="images/tomtebarn.jpg?width=300" alt="Tomtebarn"/>
-    
-        </picture>
-
-    </section>
-
-     <!--innehåll med bild-->
-    
+    <ul id="test"></ul>
     <footer class="position10">
        <p> DT211G, Datateknik GR, Frontend-baserad webbutveckling, Rebecca Smith (resm2400), 2025-03-12</p>
 
