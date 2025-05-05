@@ -141,33 +141,32 @@ console.table(programs);
   });
 
 
+  
+  programs.length=5 
+  
   new Chart(ctx2, {
     type: 'doughnut',
     data: {
-    labels: programs.map(row=>row.name),   //xx ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],//   x labels: , [courses.forEach(course =>{course.name})],
+    labels: programs.map(row=>row.name),
+     //xx ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],//   x labels: , [courses.forEach(course =>{course.name})],
     datasets: [{
     label: '# Antal',
     data: programs.map(row =>row.applicantsTotal), //y
-    borderWidth: 1
+    borderWidth: 1,
+    
+    
+   
     }]
     },
     options: {
-        scales: {
-
-          
-     
-        
-
-       
-        }
   
-       
       }
     });
 
 
-   }
+   
 
+  }
 /*
    function displayChart(data) {   //Funktion som visar kurserna
 
