@@ -310,6 +310,23 @@ right: 0px;
        
     }
 
+    .position3diagram {
+        grid-area: 3/1/4/-1;
+        margin:5%
+    }
+
+    .position3_karta {
+        grid-area: 3/1/4/-1;
+        margin:5%
+
+    }
+
+      .position4_karta {
+        grid-area: 4/1/5/-1;
+        margin:5%
+
+    }
+
     @include tabletmax { /*mixin/mediaquerias för tabletmax*/
 
     .position3index{
@@ -326,25 +343,18 @@ right: 0px;
         grid-area: 3/1/4/-1;       
             
     }
+
     
     .position4Sass{
         grid-area: 4/1/5/-1; 
        
     }
-
+   
     }
 
 
-    #myChart {
-        width: 1600px;
+
+    h2 {
+        margin-top: 10%;
+        margin-bottom: 5%;
     }
-
-
-    #map { height: 500px;
-        width: 500px; 
-        margin-left: 10%;
-
-    
-    }
-
-    
