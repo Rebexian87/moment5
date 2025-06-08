@@ -104,7 +104,7 @@
     
 
     
-    <h4 class="name" id="displayChart-Funktionsomhanterardatafr%C3%A5nAPIochskaparettcirkeldiagramochettstapeldiagrammeddataifr%C3%A5ndetta"><span class="type-signature"></span>displayChart - Funktion som hanterar data från API och skapar ett cirkeldiagram och ett stapeldiagram med data ifrån detta<span class="signature">(data, data)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="displayChart-Funktionsomhanterardatafr%C3%A5nAPIochskaparettcirkeldiagramochettstapeldiagrammeddataifr%C3%A5ndetta"><span class="type-signature"></span>displayChart - Funktion som hanterar data från API och skapar ett cirkeldiagram och ett stapeldiagram med data ifrån detta<span class="signature">(data)</span><span class="type-signature"> &rarr; {chart|chart}</span></h4>
     
 
     
@@ -160,30 +160,7 @@
 
             
 
-            <td class="description last"><p>-data från API</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>data</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>-data från API</p></td>
+            <td class="description last"><p>-data från förra funktionen</p></td>
         </tr>
 
     
@@ -224,7 +201,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line52">line 52</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line55">line 55</a>
     </li></ul></dd>
     
 
@@ -249,6 +226,52 @@
 
 
 
+<h5>Returns:</h5>
+<ul>
+        <li>
+<div class="param-desc">
+    <ul>
+<li>ctx1, Chart nummer 1 från Chart.js</li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">chart</span>
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    <ul>
+<li>ctx2, Chart nummer 1 från Chart.js</li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">chart</span>
+
+
+    </dd>
+</dl>
+</li>
+    </ul>
 
 
 
@@ -260,7 +283,7 @@
     
 
     
-    <h4 class="name" id="displayPlace-Funktionsoms%C3%A4ttermark%C3%B6roch%C3%A4ndrarkartatillplatsensommans%C3%B6kerefter"><span class="type-signature"></span>displayPlace -Funktion som sätter markör och ändrar karta till platsen som man söker efter<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="displayPlace-Funktionsoms%C3%A4ttermark%C3%B6roch%C3%A4ndrarkartatillplatsensommans%C3%B6kerefter"><span class="type-signature"></span>displayPlace -Funktion som sätter markör och ändrar karta till platsen som man söker efter<span class="signature">(data)</span><span class="type-signature"> &rarr; {map}</span></h4>
     
 
     
@@ -357,7 +380,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app2.js.html">app2.js</a>, <a href="app2.js.html#line64">line 64</a>
+        <a href="app2.js.html">app2.js</a>, <a href="app2.js.html#line66">line 66</a>
     </li></ul></dd>
     
 
@@ -382,6 +405,28 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>-Man får fram ny placering av karta och markör</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">map</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -393,7 +438,7 @@
     
 
     
-    <h4 class="name" id="getCourses"><span class="type-signature">(async) </span>getCourses<span class="signature">(url)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getCourses"><span class="type-signature">(async) </span>getCourses<span class="signature">(url)</span><span class="type-signature"> &rarr; {Promise|education}</span></h4>
     
 
     
@@ -494,7 +539,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line25">line 25</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line26">line 26</a>
     </li></ul></dd>
     
 
@@ -548,6 +593,33 @@
     
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>Datan som vi får från url</li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+|
+
+<span class="param-type">education</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -559,7 +631,7 @@
     
 
     
-    <h4 class="name" id="getLocation"><span class="type-signature">(async) </span>getLocation<span class="signature">(url)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getLocation-ENasyncfunktionsomh%C3%A4mtardatafr%C3%A5nettAPINominatim"><span class="type-signature">(async) </span>getLocation- EN async funktion som hämtar data från ett API <span class="signature">(url)</span><span class="type-signature"> &rarr; {Promise|location}</span></h4>
     
 
     
@@ -656,7 +728,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app2.js.html">app2.js</a>, <a href="app2.js.html#line36">line 36</a>
+        <a href="app2.js.html">app2.js</a>, <a href="app2.js.html#line37">line 37</a>
     </li></ul></dd>
     
 
@@ -710,6 +782,33 @@
     
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>Datan som vi får från url</li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+|
+
+<span class="param-type">location</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -773,7 +872,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line14">line 14</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line15">line 15</a>
     </li></ul></dd>
     
 
@@ -907,13 +1006,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="%25255Bchart%25255D.html">[chart]</a></li></ul><h3>Global</h3><ul><li><a href="global.html#displayChart-Funktionsomhanterardatafr%25C3%25A5nAPIochskaparettcirkeldiagramochettstapeldiagrammeddataifr%25C3%25A5ndetta">displayChart - Funktion som hanterar data från API och skapar ett cirkeldiagram och ett stapeldiagram med data ifrån detta</a></li><li><a href="global.html#displayPlace-Funktionsoms%25C3%25A4ttermark%25C3%25B6roch%25C3%25A4ndrarkartatillplatsensommans%25C3%25B6kerefter">displayPlace -Funktion som sätter markör och ändrar karta till platsen som man söker efter</a></li><li><a href="global.html#getCourses">getCourses</a></li><li><a href="global.html#getLocation">getLocation</a></li><li><a href="global.html#init">init</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#displayChart-Funktionsomhanterardatafr%25C3%25A5nAPIochskaparettcirkeldiagramochettstapeldiagrammeddataifr%25C3%25A5ndetta">displayChart - Funktion som hanterar data från API och skapar ett cirkeldiagram och ett stapeldiagram med data ifrån detta</a></li><li><a href="global.html#displayPlace-Funktionsoms%25C3%25A4ttermark%25C3%25B6roch%25C3%25A4ndrarkartatillplatsensommans%25C3%25B6kerefter">displayPlace -Funktion som sätter markör och ändrar karta till platsen som man söker efter</a></li><li><a href="global.html#getCourses">getCourses</a></li><li><a href="global.html#getLocation-ENasyncfunktionsomh%25C3%25A4mtardatafr%25C3%25A5nettAPINominatim">getLocation- EN async funktion som hämtar data från ett API </a></li><li><a href="global.html#init">init</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Sat Jun 07 2025 19:33:12 GMT+0200 (centraleuropeisk sommartid)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Sat Jun 07 2025 22:36:12 GMT+0200 (centraleuropeisk sommartid)
 </footer>
 
 <script> prettyPrint(); </script>

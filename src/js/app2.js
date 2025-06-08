@@ -18,11 +18,11 @@ attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreet
 
  
 
-   /**Funktion som kallar annan funktion när hemsidan laddas
-    * 
+   /**
+    * Funktion som innehåller en eventlistener som finns när sdian startar
     */
 function init () {
- searchbtnEl.addEventListener("click", getLocation)  //När sidan startar så anropas funktionen getLocation
+ searchbtnEl.addEventListener("click", getLocation)  
 }
 
 
@@ -31,13 +31,18 @@ function init () {
 let searchEl=document.querySelector("#input");
 let searchbtnEl=document.getElementById("search-btn")
 
-
+  /**
+   * En tom array som kommer att innehålla data från API
+   * @type {any[]}
+   */
 let location=[];
+
 /**
  * @async
- * @function getLocation
+ * @function getLocation- EN async funktion som hämtar data från ett API (Nominatim)
  * @param {string} url - The URL to download from.
  * @throws {Error} -Om vi inte får någon data
+ * @returns {Promise|location}   - Datan som vi får från url
  */
 async function getLocation () { //Funktion som hämtar data med hjälp av ajaxanrop. Try/Catch Async/Await´
 
@@ -64,6 +69,8 @@ catch (error){console.error(error)}
 /**
  * @function displayPlace -Funktion som sätter markör och ändrar karta till platsen som man söker efter
  * @param {any[]} data 
+ * @returns {map} -Man får fram ny placering av karta 
+ * @returns {marker} -Man får fram ny placering av markör 
  */
 function displayPlace(data) {
 

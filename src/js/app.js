@@ -29,7 +29,7 @@
  * @function getCourses
  * @param {string} url - The URL to download from.
  * @throws {Error} -Om vi inte får någon data
- * @returns {Promise <array>} - 
+ * @returns {Promise|education}   - Datan som vi får från url
  */
 async function getCourses () { 
 
@@ -54,8 +54,9 @@ async function getCourses () {
 
    /**
     * @function displayChart - Funktion som hanterar data från API och skapar ett cirkeldiagram och ett stapeldiagram med data ifrån detta
-    * @param {any[]} data --data från API
-    *  @param {array} data --data från API
+    * @param {any[]} data --data från förra funktionen
+    * @returns {chart} - ctx1, Chart nummer 1 från Chart.js
+    * @returns {chart} - ctx2, Chart nummer 1 från Chart.js
     */
    function displayChart(data){
 
@@ -68,7 +69,9 @@ async function getCourses () {
     ctx2.innerHTML = "";
     
 
-
+/**
+ * Sorterar datan så att utbildningarna visas ordningen flest till minst som har sökt utbildningarna
+ */
 data.sort((a, b) => b.applicantsTotal - a.applicantsTotal)
 /**
  * Array av kurser taget från API
@@ -81,10 +84,7 @@ let courses= data.filter(education=>education.type === "Kurs");
  */
 let programs= data.filter(education=>education.type === "Program");
 
-/**
- * Skapar stapeldiagramet
- * @class [chart]
- */
+
  new Chart(ctx, {
   type: 'bar',
   data: {
@@ -125,10 +125,7 @@ let programs= data.filter(education=>education.type === "Program");
 
   
   programs.length=5 
-  /**
-   * Skapar cirkeldiagrammet
-   * @class [chart]
-   */
+
   new Chart(ctx2, {
     type: 'doughnut',
     data: {
