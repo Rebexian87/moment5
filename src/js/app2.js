@@ -13,7 +13,10 @@ attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreet
 
 
 
-
+/**
+  * @function window.onload -Körs när man kommer in på sidan
+  * 
+ */
  window.onload = init;
 
  
@@ -67,7 +70,7 @@ catch (error){console.error(error)}
 
 
 /**
- * @function displayPlace -Funktion som sätter markör och ändrar karta till platsen som man söker efter
+ * displayPlace -Funktion som sätter markör och ändrar karta till platsen som man söker efter
  * @param {any[]} data 
  * @returns {map} -Man får fram ny placering av karta 
  * @returns {marker} -Man får fram ny placering av markör 

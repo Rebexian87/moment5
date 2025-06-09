@@ -1,12 +1,18 @@
 "use strict"
 
 
-
-   let education=[];
+/**
+ * En tom array som kommer att innehålla data från API
+ * @type {education[]} 
+ */
+let education=[];
 
 
  
-   
+   /**
+    * @function window.onload -Körs när man kommer in på sidan
+
+    */
    window.onload = init;
    /**
     * Funktion som kallar annan funktion när hemsidan laddas
@@ -17,10 +23,6 @@
     
 
    }
-
-
-
- 
 
 
 /**
@@ -53,7 +55,7 @@ async function getCourses () {
 
 
    /**
-    * @function displayChart - Funktion som hanterar data från API och skapar ett cirkeldiagram och ett stapeldiagram med data ifrån detta
+    * Funktion som hanterar data från API och skapar ett cirkeldiagram och ett stapeldiagram med data ifrån detta
     * @param {any[]} data --data från förra funktionen
     * @returns {chart} - ctx1, Chart nummer 1 från Chart.js
     * @returns {chart} - ctx2, Chart nummer 1 från Chart.js
